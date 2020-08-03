@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    #container{
+        width: 407px;
+        height: 451px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aquamarine;
+    }
+    #btn{
+        width: 80px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        background-color: #cccccc;
+        cursor: pointer;     
+    }
+</style>
+<body>
+  <div id="container">
+    <button id="btn">Click-Me</button>
+  </div>
+
+<script>
+    const buttonForChange = document.getElementById("btn");
+    const MainContainer = document.getElementById("container");
+
+    const colors = ["#A2FAA3", "#92C9B1", "#4F759B", "#5D5179", "#571F4E"];
+
+    buttonForChange.addEventListener("click", changeBackground);
+    
+
+    function changeBackground(){
+        const colorIndex = parseInt(Math.random()*colors.length);
+        MainContainer.style.backgroundColor = colors[colorIndex];
+        buttonForChange.style.backgroundColor = colors[colorIndex];
+
+    }
+</script>
+</body>
+</html>
